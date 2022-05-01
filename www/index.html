@@ -27,6 +27,17 @@
 
 	<body>
 		<script>
+			function adjustCoyoteVolume(direction) {
+				currentVolume = document.getElementById('player').volume;
+
+				currentVolume = currentVolume + (direction == 'up' ? 0.1 : -0.1);
+
+				if (currentVolume > 1) { currentVolume = 1; }
+				if (currentVolume < 0) { currentVolume = 0; }
+
+				document.getElementById('player').volume = currentVolume;
+			}
+
 			function updateCoyoteAudioSrc() {
 				var selected = 'media/' + document.getElementById('coyote_audio_src').value;
 
@@ -65,10 +76,10 @@
 							<button type="button" class="btn btn-primary" onclick="document.getElementById('player').currentTime=0">
 								<img class="img-fluid" src="icons/skip-backward.svg" alt="Reset" title="Reset" />
 							</button>
-							<button type="button" class="btn btn-primary" onclick="document.getElementById('player').volume-=0.1">
+							<button type="button" class="btn btn-primary" onclick="adjustCoyoteVolume('down')">
 								<img class="img-fluid" src="icons/volume-down.svg" alt="Volume Down" title="Volume Down" />
 							</button>
-							<button type="button" class="btn btn-primary" onclick="document.getElementById('player').volume+=0.1">
+							<button type="button" class="btn btn-primary" onclick="adjustCoyoteVolume('up')">
 								<img class="img-fluid" src="icons/volume-up.svg" alt="Volume Up" title="Volume Up" />
 							</button>
 						</div>
