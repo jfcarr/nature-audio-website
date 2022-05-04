@@ -36,7 +36,7 @@
 				if (currentVolume < 0) { currentVolume = 0; }
 
 				document.getElementById('player').volume = currentVolume;
-				document.getElementById('volumelabel').innerText = 'Volume: ' + Math.round(currentVolume * 100) + '%';
+				document.getElementById('volumebadge').innerText = 'Volume: ' + Math.round(currentVolume * 100) + '%';
 			}
 
 			function updateCoyoteAudioSrc() {
@@ -73,24 +73,24 @@
 							</audio>
 						</div>
 						<div class="btn-group" role="group">
-							<button type="button" class="btn btn-primary" onclick="document.getElementById('player').play()">
+							<button type="button" class="btn btn-primary btn-lg" onclick="document.getElementById('player').play()">
 								<img class="img-fluid" src="icons/play.svg" alt="Play" title="Play" />
 							</button>
-							<button type="button" class="btn btn-primary" onclick="document.getElementById('player').pause()">
+							<button type="button" class="btn btn-primary btn-lg" onclick="document.getElementById('player').pause()">
 								<img class="img-fluid" src="icons/pause.svg" alt="Pause" title="Pause" />
 							</button>
-							<button type="button" class="btn btn-primary" onclick="document.getElementById('player').currentTime=0">
+							<button type="button" class="btn btn-primary btn-lg" onclick="document.getElementById('player').currentTime=0">
 								<img class="img-fluid" src="icons/skip-backward.svg" alt="Reset" title="Reset" />
 							</button>
-							<button type="button" class="btn btn-primary" onclick="adjustCoyoteVolume('down')">
+							<button type="button" class="btn btn-primary btn-lg" onclick="adjustCoyoteVolume('down')">
 								<img class="img-fluid" src="icons/volume-down.svg" alt="Volume Down" title="Volume Down" />
 							</button>
-							<button type="button" class="btn btn-primary" onclick="adjustCoyoteVolume('up')">
+							<button type="button" class="btn btn-primary btn-lg" onclick="adjustCoyoteVolume('up')">
 								<img class="img-fluid" src="icons/volume-up.svg" alt="Volume Up" title="Volume Up" />
+								<span id="volumebadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+									Volume: 100%
+								</span>
 							</button>
-						</div>
-						<div id="volumelabel">
-							Volume: 100%
 						</div>
 					</div>
 				</div>
