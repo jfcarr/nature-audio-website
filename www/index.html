@@ -31,15 +31,17 @@
 			<h1>Nature Audio</h1>
 			<div class="card">
 				<div class="card-body">
-					<h2>Coyote</h2>
 					<div class="simple-padding">
-						<label for="coyote_audio_src">Choose an audio source:</label>
-						<select class="form-select" id="coyote_audio_src" name="coyote_audio_src" onchange="updateCoyoteAudioSrc()">
-							<option value="challenge_bark.mp3">Challenge Bark</option>
-							<option value="greeting_howls_1.mp3">Greeting Howls 1</option>
-							<option value="greeting_howls_2.mp3">Greeting Howls 2</option>
-							<option value="group_howl.mp3">Group Howl</option>
-							<option value="hurt_pup.mp3">Hurt Pup</option>
+						<label for="audio_src">Choose an audio source:</label>
+						<select class="form-select" id="audio_src" name="audio_src" onchange="updateAudioSrc()">
+							<option value="coyote_challenge_bark.mp3">Coyote - Challenge Bark</option>
+							<option value="coyote_greeting_howls_1.mp3">Coyote - Greeting Howls 1</option>
+							<option value="coyote_greeting_howls_2.mp3">Coyote - Greeting Howls 2</option>
+							<option value="coyote_group_howl.mp3">Coyote - Group Howl</option>
+							<option value="coyote_hurt_pup.mp3">Coyote - Hurt Pup</option>
+							<option value="owl_great_horned_owl.mp3">Owl - Great Horned Owl</option>
+							<option value="owl_eastern_screech_owl_tremolo.mp3">Owl - Eastern Screen Owl - tremolo (mating)</option>
+							<option value="owl_eastern_screech_owl_whinny.mp3">Owl - Eastern Screen Owl - whinny (territorial)</option>
 						</select>
 					</div>
 					<div class="simple-padding">
@@ -49,7 +51,7 @@
 					</div>
 					<div class="simple-padding">
 						<div>
-							<audio id="player" src="media/coyote/challenge_bark.mp3">
+							<audio id="player" src="media/challenge_bark.mp3">
 								Your browser does not support the
 								<code>audio</code> element.
 							</audio>
@@ -64,10 +66,10 @@
 							<button type="button" class="btn btn-primary btn-lg" onclick="document.getElementById('player').currentTime=0">
 								<img class="img-fluid" src="icons/skip-backward.svg" alt="Reset" title="Reset" />
 							</button>
-							<button type="button" class="btn btn-primary btn-lg" onclick="adjustCoyoteVolume('down')">
+							<button type="button" class="btn btn-primary btn-lg" onclick="adjustVolume('down')">
 								<img class="img-fluid" src="icons/volume-down.svg" alt="Volume Down" title="Volume Down" />
 							</button>
-							<button type="button" class="btn btn-primary btn-lg" onclick="adjustCoyoteVolume('up')">
+							<button type="button" class="btn btn-primary btn-lg" onclick="adjustVolume('up')">
 								<img class="img-fluid" src="icons/volume-up.svg" alt="Volume Up" title="Volume Up" />
 								<span id="volumebadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
 									Volume: 100%
